@@ -1,0 +1,23 @@
+{
+  "name": "mmm-holiday2",
+  "version": "1.0.0",
+  "main": "MMM-Holiday2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cowboysdude/mmm-holiday.git"
+  },
+  "author": "cowboysdude",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cowboysdude/mmm-holiday/issues"
+  },
+  "homepage": "https://github.com/cowboysdude/mmm-holiday#readme",
+  "dependencies": {
+    "public-holidays": "^0.1.1"
+  },
+  "devDependencies": {},
+  "description": ""
+}
