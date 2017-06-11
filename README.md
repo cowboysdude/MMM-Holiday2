@@ -33,15 +33,15 @@ This is a MORE extensive list of holidays for countries and languages.
    Many, but not ALL, have been tested.  Some may not work.
  
      Afghanistan	AF		ps
-   Afghanistan	AF		prs	
-   Albania	AL		sq	
-Algeria	DZ			ar	
-Argentina			es	
-Armenia	AM			hy	
-Australia	AU		en	
-Austria	AT		de	
-Bahrain	BH		ar	
-Bangladesh	BD		bn	
+     Afghanistan	AF		prs	
+     Albania	AL		sq	
+     Algeria	DZ			ar	
+     Argentina			es	
+     Armenia	AM			hy	
+     Australia	AU		en	
+     Austria	AT		de	
+     Bahrain	BH		ar	
+     Bangladesh	BD		bn	
 Basque	ES		eu	
 Belarus	BY		be	
 Belgium	BE		fr	
