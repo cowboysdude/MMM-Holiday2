@@ -4,11 +4,12 @@ Holiday 2 module for MagicMirror2
 This is a MORE extensive list of holidays for countries and languages.
 
 # INSTRUCTIONS
-  ~MagicMirror/modules
-  git clone https://github.com/cowboysdude/MMM-Holidays2
+   
+# ~MagicMirror/modules
+# git clone https://github.com/cowboysdude/MMM-Holidays2
   
-  ~MagicMirror/modules/MMM-Holidays2
-  npm install
+# ~MagicMirror/modules/MMM-Holidays2
+# npm install
   
   
 # CONFIG
