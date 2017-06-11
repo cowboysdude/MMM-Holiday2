@@ -32,9 +32,9 @@ This is a MORE extensive list of holidays for countries and languages.
  # 2 Letter country and language code
    Many, but not ALL, have been tested.  Some may not work.
  
- Afghanistan	AF		ps
-Afghanistan	AF		prs	
-Albania	AL		sq	
+     Afghanistan	AF		ps
+   Afghanistan	AF		prs	
+   Albania	AL		sq	
 Algeria	DZ			ar	
 Argentina			es	
 Armenia	AM			hy	
