@@ -21,7 +21,7 @@ Module.register("MMM-Holiday2", {
     },
 
     getStyles: function() {
-        return ["MMM-Holiday2.css"];
+        return ["MMM-Holiday2.css", "font-awesome.css"];
     },
 
     // Define start sequence.
@@ -62,7 +62,7 @@ console.log(this.holidays);
 
 
     getDom: function() {
-        var wrapper = document.createElement("div");
+        var wrapper = document.createElement("table");
 		wrapper.classList.add("wrapper");
 		
 
@@ -108,16 +108,25 @@ console.log(this.holidays);
             var d2 = new Date(allDate);
 			//console.log(todayDate+" ~ "+ allDate);
 			
+      var holidayWrapper = document.createElement("tr");
+      
+        var symbolWrapper = document.createElement("th");
+        var symbol = document.createElement("i");
+        symbol.classList.add("fa", "fa-calendar", "symbol");
+        symbolWrapper.appendChild(symbol);
+	    holidayWrapper.appendChild(symbolWrapper);
+            	
 			if (this.holidays.length > 0) {
     if (DateDiff.inDays(d1, d2) > -1 && DateDiff.inDays(d1, d2) <= this.config.days) {
-        var HolidayColumn = document.createElement("div");
+        var HolidayColumn = document.createElement("th");
         HolidayColumn.classList.add("bright", "xsmall", "text");
 		if (todayDate === allDate){
 		HolidayColumn.innerHTML = allDate + " ~ " + holiday.summary + " Today";	
 		} else {
         HolidayColumn.innerHTML = allDate + " ~ " + holiday.summary + " In " + DateDiff.inDays(d1, d2) + " days";
         }
-        wrapper.appendChild(HolidayColumn);
+        holidayWrapper.appendChild(HolidayColumn);
+        wrapper.appendChild(holidayWrapper);
     }
 
        } else {
