@@ -12,7 +12,7 @@ This is a MORE extensive list of holidays for countries and languages.
 # npm install
   
 
-Before we get started on the config let me point some options:
+Before we get started on the config let me point out some options:
 
      Use header?  True or false [shows or hides header]
      Header?  What would you like it to say if you're using it?
