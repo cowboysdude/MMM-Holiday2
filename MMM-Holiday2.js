@@ -19,7 +19,7 @@ Module.register("MMM-Holiday2", {
         maxWidth: '90%',
         icon: "fa-calendar-o",
         custom: false,
-        path: "modules/MMM-Holiday2/icons/24.png"
+        img: "24.png"
 
     },
 
