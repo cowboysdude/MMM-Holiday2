@@ -13,14 +13,16 @@ This is a MORE extensive list of holidays for countries and languages.
   
 
 Before we get started on the config let me point some options:
-Use header?  True or false [shows or hides header]
-Header?  What would you like it to say if you're using it?
-Country: Put your two letter country code here
-Lang:  put your two letter language here 
-days:  How many days in advance should it look for holidays?
-icon:  What font-awesome icon would you like to use?
-custom: use your own icon... True or font-awesome: false 
-img: Don't want font awesome icons...use your own!  There are many in the icons dir but you can add your own!
+
+     Use header?  True or false [shows or hides header]
+     Header?  What would you like it to say if you're using it?
+     Country: Put your two letter country code here
+     Lang:  put your two letter language here 
+     days:  How many days in advance should it look for holidays?
+     icon:  What font-awesome icon would you like to use?
+     custom: use your own icon... True or font-awesome: false 
+     img: Don't want font awesome icons...use your own!  There are many 
+          in the icons dir but you can add your own!
 
 # CONFIG
 
