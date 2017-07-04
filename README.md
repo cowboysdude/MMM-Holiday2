@@ -69,11 +69,13 @@ Don't like the colors?  Change them!!  Here are some things you can change by pu
 The above only reference font-awesome icons!  They will NOT work for your custom icons....     
        
 Use these to change the color of your holidays listing..  the 1st one is for if there is a holidays you can change the txt color to stand out]
+
         .MMM-Holiday2 .today {
 	     color: #54d2e4;
         }
         
  What color do you want the text in a NON holiday day?  I stick with white myself :)
+ 
         .MMM-Holiday2 .holiday {
 	     color: #fff;
         }
