@@ -16,7 +16,10 @@ Module.register("MMM-Holiday2", {
         country: 'us',
         lang: 'en',
         days: '200',
-        maxWidth: '90%'
+        maxWidth: '90%',
+        icon: "fa-calendar-o",
+        custom: false,
+        path: "modules/MMM-Holiday2/icons/24.png"
 
     },
 
@@ -68,7 +71,6 @@ Module.register("MMM-Holiday2", {
 
 
         if (!this.loaded) {
-
             wrapper.innerHTML = "Gathering Holidays...";
             wrapper.className = "bright small";
             return wrapper;
@@ -76,7 +78,7 @@ Module.register("MMM-Holiday2", {
 
         if (this.config.useHeader != false) {
             var header = document.createElement("header");
-            header.classList.add("small", "dimmed");
+            header.classList.add("xsmall", "dimmed");
             header.innerHTML = this.config.header;
             wrapper.appendChild(header);
         }
@@ -112,20 +114,34 @@ Module.register("MMM-Holiday2", {
             var holidayWrapper = document.createElement("tr");
 
             var symbolWrapper = document.createElement("td");
-            var symbol = document.createElement("i");
-            symbol.classList.add("fa", "fa-calendar-o");
-            symbolWrapper.appendChild(symbol);
-            holidayWrapper.appendChild(symbolWrapper);
+            if (this.config.custom != false) {
+                var img = document.createElement("img");
+                img.classList.add("photo");
+                img.src = "modules/MMM-Holiday2/icons/" + this.config.img;
+                symbolWrapper.appendChild(img);
+                holidayWrapper.appendChild(symbolWrapper);
+            } else {
+                var symbol = document.createElement("i");
+                symbol.classList.add("symbol");
+                if (todayDate != allDate) {
+                    symbol.classList.add("fa", this.config.icon, "symbol");
+                } else {
+                    symbol.classList.add("fa", "fa-calendar-check-o", "icon");
+                }
+                symbolWrapper.appendChild(symbol);
+                holidayWrapper.appendChild(symbolWrapper);
+            }
+
 
             var HolidayColumn = document.createElement("td");
             if (this.holidays.length > 0) {
                 if (DateDiff.inDays(d1, d2) > -1 && DateDiff.inDays(d1, d2) <= this.config.days) {
-
-                    HolidayColumn.classList.add("bright", "xsmall");
                     if (todayDate === allDate) {
-                        HolidayColumn.innerHTML = "&nbsp;" + allDate + " ~ " + holiday.summary + " Today";
+                        HolidayColumn.classList.add("bright", "xsmall", "today");
+                        HolidayColumn.innerHTML = "&nbsp;&nbsp;" + allDate + " ~ " + holiday.summary + " Today";
                     } else {
-                        HolidayColumn.innerHTML = "&nbsp;" + allDate + " ~ " + holiday.summary + " In " + DateDiff.inDays(d1, d2) + " days";
+                        HolidayColumn.classList.add("bright", "xsmall", "holiday");
+                        HolidayColumn.innerHTML = "&nbsp;&nbsp;" + allDate + " ~ " + holiday.summary + " In " + DateDiff.inDays(d1, d2) + " days";
                     }
                     holidayWrapper.appendChild(HolidayColumn);
                     wrapper.appendChild(holidayWrapper);
