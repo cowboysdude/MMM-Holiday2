@@ -36,9 +36,9 @@ Before we get started on the config let me point out some options:
                 country: "gr",  //country code
                 lang: "el",  //language code
                 days: '90'  //How many days in advance to show holidays for
-                icon: "fa-calendar-o",
-                custom: false,
-                img: "globe-24.png"
+                icon: "fa-calendar-o",  //font awesome icons ONLY... some may not work!
+                custom: false,   //this is false if you're using font awesome icons true to use your own
+                img: "globe-24.png"  //what is the name of your custom icon file? 
             }
         },
 
