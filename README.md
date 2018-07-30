@@ -6,16 +6,16 @@ This is a MORE extensive list of holidays for countries and languages.
 # INSTRUCTIONS
    
 # ~MagicMirror/modules
-# git clone https://github.com/cowboysdude/MMM-Holidays2
+ git clone https://github.com/cowboysdude/MMM-Holidays2
   
 # ~MagicMirror/modules/MMM-Holidays2
-# npm install
+ npm install
   
 
 Before we get started on the config let me point out some options:
 
      Use header?  True or false [shows or hides header]
-     Header?  What would you like it to say if you're using it?
+     Header?  What would you like it to say if you're using it?  true or false
      Country: Put your two letter country code here
      Lang:  put your two letter language here 
      days:  How many days in advance should it look for holidays?
