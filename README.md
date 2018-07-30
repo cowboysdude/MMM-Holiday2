@@ -3,6 +3,10 @@ Holiday 2 module for MagicMirror2
 
 This is a MORE extensive list of holidays for countries and languages.
 
+![alt tag](examples/Capture.PNG)  ![alt tag](examples/capde.png)
+
+
+
 # INSTRUCTIONS
    
 # ~MagicMirror/modules
