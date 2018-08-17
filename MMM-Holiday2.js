@@ -15,11 +15,12 @@ Module.register("MMM-Holiday2", {
         fadeSpeed: 7,
         country: 'us',
         lang: 'en',
-        days: '200',
+        days: '120',
         maxWidth: '90%',
         icon: "fa-calendar-o",
         custom: false,
-        path: "modules/MMM-Holiday2/icons/24.png"
+        path: "modules/MMM-Holiday2/icons/24.png",
+		img: ""
         
     },
 
@@ -40,7 +41,7 @@ Module.register("MMM-Holiday2", {
     
      processHolidays: function(data) {
         this.holidays = data;
-console.log(this.holidays);
+		console.log(this.holidays);
         this.loaded = true;
     },
 
@@ -78,7 +79,8 @@ console.log(this.holidays);
          
             if (this.config.useHeader != false) {
             var header = document.createElement("header");
-            header.classList.add("xsmall", "dimmed");
+            header.classList.add("xsmall", "bright");
+			header.setAttribute('style','text-align: left');
             header.innerHTML = this.config.header;
             wrapper.appendChild(header);
         }
@@ -113,7 +115,7 @@ console.log(this.holidays);
         var holidayWrapper = document.createElement("tr");
       
         var symbolWrapper = document.createElement("td");
-        if (this.config.custom != false) {
+        if (this.config.img != "") {
         var img = document.createElement("img");
         img.classList.add("photo");
         img.src = "modules/MMM-Holiday2/icons/"+this.config.img; 
@@ -125,7 +127,7 @@ console.log(this.holidays);
          if (todayDate != allDate){
         symbol.classList.add("fa", this.config.icon, "symbol");
 		} else {
-		symbol.classList.add("fa", "fa-calendar-check-o", "icon");
+		symbol.classList.add("fa", "fa-bell-o", "icon");
 		}
 		symbolWrapper.appendChild(symbol);
 	    holidayWrapper.appendChild(symbolWrapper);
@@ -137,11 +139,16 @@ console.log(this.holidays);
           if (DateDiff.inDays(d1, d2) > -1 && DateDiff.inDays(d1, d2) <= this.config.days) {
 		   if (todayDate === allDate){
 		HolidayColumn.classList.add("bright", "xsmall", "today","row");	
-		HolidayColumn.innerHTML = "<font color=#DAA520>&nbsp;&nbsp;<b>"+allDate + "</b> ~ " + holiday.summary + " Today</font>";	
+		HolidayColumn.innerHTML = "<font color=#ece96a>&nbsp;&nbsp;<b>"+allDate + "</b> ~ " + holiday.summary + " Today</font>";	
 		} else {
+		HolidayColumn.classList.add("bright", "xsmall", "holiday","row");	
+			if (DateDiff.inDays(d1,d2) == "1"){
+        HolidayColumn.innerHTML = "&nbsp;&nbsp;<b>"+allDate + "</b> ~ " + holiday.summary + " tomorrow!";		
+			} else {
 		HolidayColumn.classList.add("bright", "xsmall", "holiday","row");
-        HolidayColumn.innerHTML = "&nbsp;&nbsp;<b>"+allDate + "</b> ~ " + holiday.summary + " In <font color=#FF8C00>" + DateDiff.inDays(d1, d2) + "</font> days";
-        }
+        HolidayColumn.innerHTML = "&nbsp;&nbsp;<b>"+allDate + "</b> ~ " + holiday.summary + " In <font color=#ffffff>" + DateDiff.inDays(d1, d2) + "</font> days";
+        }		
+		}
         holidayWrapper.appendChild(HolidayColumn);
         wrapper.appendChild(holidayWrapper);
         }
