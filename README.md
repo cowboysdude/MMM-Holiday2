@@ -10,7 +10,7 @@ This is a MORE extensive list of holidays for countries and languages.
 # INSTRUCTIONS
    
 # ~MagicMirror/modules
- git clone https://github.com/cowboysdude/MMM-Holidays2
+ git clone https://github.com/cowboysdude/MMM-Holiday2
   
 # ~MagicMirror/modules/MMM-Holidays2
  npm install
