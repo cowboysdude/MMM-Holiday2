@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/cowboysdude/mmm-holiday#readme",
   "dependencies": {
-    "public-holidays": "^0.1.1"
+    "public-holidays": "^0.2.0"
   },
   "devDependencies": {},
   "description": ""
