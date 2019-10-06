@@ -41,7 +41,6 @@ Module.register("MMM-Holiday2", {
     
      processHolidays: function(data) {
         this.holidays = data;
-		console.log(this.holidays);
         this.loaded = true;
     },
 
