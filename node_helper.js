@@ -5,22 +5,37 @@
  *
  */
 const NodeHelper = require('node_helper');
-const holidays = require('public-holidays');
+// returns an object which CONTAINS a function (is NOT the function itself)
+const l = require('public-holidays');
 
 
 module.exports = NodeHelper.create({
 
     start: function() {
         console.log("Starting Holiday2 module");
+        console.log(" lholidays="+typeof l.getHolidays)
     },
 
-    getHolidays: function() {
-        var self = this;
+    getHolidays: async function() {
+        console.log("in getHolidays")
         var cc = this.config.country.toLowerCase();
         var lc = this.config.lang.toLowerCase();
-       holidays({country: cc, lang: lc}, (error, result) => {
-            self.sendSocketNotification("HOLIDAYS_RESULT", result);
-       });
+        //
+        console.log("calling library")
+        result= await l.getHolidays({country: cc, lang: lc})   // use async call function in object
+         console.log("back from library call result="+JSON.stringify(result))
+         if(result)
+             this.sendSocketNotification("HOLIDAYS_RESULT", result);
+         /*, (error, result) => {
+
+            console.log("back from library call")
+            if(error)
+                console.log("getHolidays="+ JSON.stringify(error))
+            else {
+                console.log("sending result="+JSON.stringify(result))
+                this.sendSocketNotification("HOLIDAYS_RESULT", result);
+            }
+       }); */
     },
 
     //Subclass socketNotificationReceived received.
@@ -28,7 +43,7 @@ module.exports = NodeHelper.create({
         if (notification === "CONFIG") {
             this.config = payload;
         } else if (notification === 'GET_HOLIDAYS') {
-            this.getHolidays(payload);
+            this.getHolidays();
         }
     }
 });
