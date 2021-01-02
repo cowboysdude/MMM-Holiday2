@@ -17,26 +17,22 @@ module.exports = NodeHelper.create({
     },
 
     getHolidays: async function() {
-        console.log("in getHolidays")
-        var cc = this.config.country.toLowerCase();
-        var lc = this.config.lang.toLowerCase();
-        //
+    console.log("in getHolidays")
+    var cc = this.config.country.toLowerCase();
+    var lc = this.config.lang.toLowerCase();
+    const options = {
+        country: cc,
+        lang: lc
+    };
+    try {
         console.log("calling library")
-        result= await l.getHolidays({country: cc, lang: lc})   // use async call function in object
-         console.log("back from library call result="+JSON.stringify(result))
-         if(result)
-             this.sendSocketNotification("HOLIDAYS_RESULT", result);
-         /*, (error, result) => {
-
-            console.log("back from library call")
-            if(error)
-                console.log("getHolidays="+ JSON.stringify(error))
-            else {
-                console.log("sending result="+JSON.stringify(result))
-                this.sendSocketNotification("HOLIDAYS_RESULT", result);
-            }
-       }); */
-    },
+        result = await l.getHolidays(options)
+    } catch (error) {
+        console.error(error)
+    }
+    if (result)
+        this.sendSocketNotification("HOLIDAYS_RESULT", result);
+},
 
     //Subclass socketNotificationReceived received.
     socketNotificationReceived: function(notification, payload) {
