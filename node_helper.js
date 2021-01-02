@@ -14,7 +14,6 @@ module.exports = NodeHelper.create({
     },
 
     getHolidays: async function() {
-    console.log("in getHolidays")
     var cc = this.config.country.toLowerCase();
     var lc = this.config.lang.toLowerCase();
     const options = {
