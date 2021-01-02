@@ -41,6 +41,7 @@ Module.register("MMM-Holiday2", {
     
      processHolidays: function(data) {
         this.holidays = data;
+//console.log(this.holidays);
         this.loaded = true;
     },
 
@@ -85,7 +86,7 @@ Module.register("MMM-Holiday2", {
         }
         for (var i = 0; i < this.holidays.length; i++) {
             var holiday = this.holidays[i];
-			
+		console.log(holiday);	
 			var today = new Date();
             var dd = today.getDate();
             var dayPlus = today.getDate();
@@ -98,7 +99,7 @@ Module.register("MMM-Holiday2", {
            
             
            //date string from holiday[i] returned as mm/dd/yyyy
-            var dt = new Date(holiday.start);
+            var dt = new Date(holiday.date);
 
             var allDate = (dt.getMonth() + 1) + "/" +  dt.getDate()+ "/" +dt.getFullYear();
             var DateDiff = {
@@ -138,14 +139,14 @@ Module.register("MMM-Holiday2", {
           if (DateDiff.inDays(d1, d2) > -1 && DateDiff.inDays(d1, d2) <= this.config.days) {
 		   if (todayDate === allDate){
 		HolidayColumn.classList.add("bright", "xsmall", "today","row");	
-		HolidayColumn.innerHTML = "<font color=#ece96a>&nbsp;&nbsp;<b>"+allDate + "</b> ~ " + holiday.summary + " Today</font>";	
+		HolidayColumn.innerHTML = "<font color=#ece96a>&nbsp;&nbsp;<b>"+allDate + "</b> ~ " + holiday.name + " Today</font>";	
 		} else {
 		HolidayColumn.classList.add("bright", "xsmall", "holiday","row");	
 			if (DateDiff.inDays(d1,d2) == "1"){
-        HolidayColumn.innerHTML = "&nbsp;&nbsp;<b>"+allDate + "</b> ~ " + holiday.summary + " tomorrow!";		
+        HolidayColumn.innerHTML = "&nbsp;&nbsp;<b>"+allDate + "</b> ~ " + holiday.name + " tomorrow!";		
 			} else {
 		HolidayColumn.classList.add("bright", "xsmall", "holiday","row");
-        HolidayColumn.innerHTML = "&nbsp;&nbsp;<b>"+allDate + "</b> ~ " + holiday.summary + " In <font color=#ffffff>" + DateDiff.inDays(d1, d2) + "</font> days";
+        HolidayColumn.innerHTML = "&nbsp;&nbsp;<b>"+allDate + "</b> ~ " + holiday.name + " In <font color=#ffffff>" + DateDiff.inDays(d1, d2) + "</font> days";
         }		
 		}
         holidayWrapper.appendChild(HolidayColumn);
