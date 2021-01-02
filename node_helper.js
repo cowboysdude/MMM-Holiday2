@@ -5,15 +5,12 @@
  *
  */
 const NodeHelper = require('node_helper');
-// returns an object which CONTAINS a function (is NOT the function itself)
 const l = require('public-holidays');
-
 
 module.exports = NodeHelper.create({
 
     start: function() {
         console.log("Starting Holiday2 module");
-        console.log(" lholidays="+typeof l.getHolidays)
     },
 
     getHolidays: async function() {
@@ -25,7 +22,6 @@ module.exports = NodeHelper.create({
         lang: lc
     };
     try {
-        console.log("calling library")
         result = await l.getHolidays(options)
     } catch (error) {
         console.error(error)
